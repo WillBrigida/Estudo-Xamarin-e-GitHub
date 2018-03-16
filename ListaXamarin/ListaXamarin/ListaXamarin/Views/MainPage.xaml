@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:ListaXamarin"
+             x:Class="ListaXamarin.MainPage"
+             xmlns:lv="clr-namespace:Xamarin.Forms.MultiSelectListView;assembly=Xamarin.Forms.MultiSelectListView" Padding="0,20,0,0"
+             Title=" Produtos">
+
+    
+
+    <StackLayout>
+
+        <ListView  
+           HasUnevenRows="true"
+
+            SeparatorVisibility="Default" 
+
+            ItemsSource="{Binding Produtos}"
+
+                  lv:MultiSelect.Enable="true">
+
+            <ListView.ItemTemplate>
+
+                <DataTemplate>
+
+                    <lv:SelectableCell x:Name="SelectableCell">
+
+
+
+                        <lv:SelectableCell.CheckView>
+
+                            <Image Source="select.png" WidthRequest="30" HeightRequest="30"></Image>
+
+                        </lv:SelectableCell.CheckView>
+
+
+
+                        <lv:SelectableCell.DataView>
+
+                            <StackLayout Orientation="Vertical" Padding="10,0,20,0">
+
+                                <Label Text="{Binding NomeProduto}" FontSize="17" ></Label>
+                                <!--<Label Text="{Binding QuantidadeDeItens}" FontSize="Medium" ></Label>-->
+
+                            </StackLayout>
+
+                        </lv:SelectableCell.DataView>
+
+
+
+                    </lv:SelectableCell>
+
+
+
+                </DataTemplate>
+
+            </ListView.ItemTemplate>
+
+
+
+        </ListView>
+
+    </StackLayout>
+
+</ContentPage>

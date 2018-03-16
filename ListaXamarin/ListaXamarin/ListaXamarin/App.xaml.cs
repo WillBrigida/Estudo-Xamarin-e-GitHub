@@ -13,7 +13,7 @@ namespace ListaXamarin
 		{
 			InitializeComponent();
 
-			MainPage = new ListaXamarin.MainPage();
+			MainPage = new NavigationPage( new MainPage());
 		}
 
 		protected override void OnStart ()
