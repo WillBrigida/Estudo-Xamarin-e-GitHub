@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <PackageReference Include="Xamarin.Forms" Version="2.5.1.340284-pre2" />
+    <PackageReference Include="Xamarin.Forms.MultiSelectListView" Version="1.0.1" />
   </ItemGroup>
 
   <ItemGroup>
