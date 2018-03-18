@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ListaXamarin.Views;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,7 +14,7 @@ namespace ListaXamarin
 		{
 			InitializeComponent();
 
-			MainPage = new NavigationPage( new MainPage());
+			MainPage = new NavigationPage( new LoginView());
 		}
 
 		protected override void OnStart ()
