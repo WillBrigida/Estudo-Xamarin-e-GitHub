@@ -1,4 +1,6 @@
-﻿using ListaXamarin.Views;
+﻿using ListaXamarin.IServices;
+using ListaXamarin.Services;
+using ListaXamarin.Views;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,8 +15,9 @@ namespace ListaXamarin
 		public App ()
 		{
 			InitializeComponent();
+            DependencyService.Register<INavigationService, NavigationService>();
 
-			MainPage = new NavigationPage( new LoginView());
+            MainPage = new NavigationPage( new LoginView());
 		}
 
 		protected override void OnStart ()

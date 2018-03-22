@@ -1,4 +1,5 @@
 ﻿using GalaSoft.MvvmLight.Command;
+using ListaXamarin.IServices;
 using System;
 using System.Windows.Input;
 using Xamarin.Forms;
@@ -46,6 +47,9 @@ namespace ListaXamarin.ViewModels
             set {this.SetProperty(ref isRunning , value); }
         }
 
+
+        private readonly INavigationService _navigationService;
+
         public ICommand LoginCommand
         {
             get
@@ -90,12 +94,20 @@ namespace ListaXamarin.ViewModels
                     "Login e/ou Senha inválidos! Verifique os dados informados e tente novamente",
                     "Ok");
                 return;
+                
+
+            }
+            else
+            {
+                await this._navigationService.NavigateToMain();
             }
         }
 
         public LoginViewModel()
         {
             this.IsEnabled = true;
+            this._navigationService = DependencyService.Get<INavigationService>();
+
         }
     }
 }
