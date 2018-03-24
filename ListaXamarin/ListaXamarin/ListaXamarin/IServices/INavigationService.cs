@@ -8,7 +8,7 @@ namespace ListaXamarin.IServices
     public interface INavigationService
     {
         Task NavigateToLogin();
-        //Task NavigateToRegister();
+        Task NavigateToItensView();
         Task NavigateToMain();
     }
 }

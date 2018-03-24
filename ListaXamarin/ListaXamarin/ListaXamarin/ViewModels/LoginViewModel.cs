@@ -87,7 +87,7 @@ namespace ListaXamarin.ViewModels
 
 
 
-            if (this.Email != "will_brigida@hotmail.com" || this.Senha != "123456")
+            if (this.Email != "will_brigida@hotmail.com" || this.Senha != "1")
             {
                 await Application.Current.MainPage.DisplayAlert(
                     "Ops!",

@@ -3,14 +3,64 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:ListaXamarin"
              x:Class="ListaXamarin.MainPage"
-             xmlns:lv="clr-namespace:Xamarin.Forms.MultiSelectListView;assembly=Xamarin.Forms.MultiSelectListView" Padding="0,20,0,0"
+             xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
+             xmlns:lv="clr-namespace:Xamarin.Forms.MultiSelectListView;assembly=Xamarin.Forms.MultiSelectListView" Padding="0,10,0,0"
              Title="Lista de Produtos">
 
-    
+
 
     <StackLayout>
 
-        <ListView  
+        <controls:CircleImage
+
+            
+            WidthRequest="120"
+            Source="red">
+            <!--BackgroundColor="Yellow"-->
+            <!--controle layout-->
+            
+            
+        </controls:CircleImage>
+        <ListView
+             HasUnevenRows="true"
+            SeparatorVisibility="Default"
+            ItemsSource="{Binding Produtos}">
+            <ListView.ItemTemplate>
+                <DataTemplate >
+                    <ViewCell >
+                        <Frame>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+
+                                <controls:CircleImage                                  
+                                        Grid.Column="0"
+                                    HeightRequest="45"
+                                        HorizontalOptions="Start" 
+                                        Source="red">
+                                </controls:CircleImage>
+                                
+                                <StackLayout                      
+                                        Grid.Column="1"
+                                        VerticalOptions="Center">
+                                    <Label 
+                                            FontAttributes="Bold"
+                                            FontSize="Medium" 
+                                            Text="{Binding NomeProduto}"
+                                            TextColor="Black">
+                                    </Label>
+                                </StackLayout>
+                            </Grid>
+                        </Frame>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <!--<ListView  
            HasUnevenRows="true"
 
             SeparatorVisibility="Default" 
@@ -40,7 +90,7 @@
                             <StackLayout Orientation="Vertical" Padding="10,0,20,0">
 
                                 <Label Text="{Binding NomeProduto}" FontSize="17" ></Label>
-                                <!--<Label Text="{Binding QuantidadeDeItens}" FontSize="Medium" ></Label>-->
+                                --><!--<Label Text="{Binding QuantidadeDeItens}" FontSize="Medium" ></Label>--><!--
 
                             </StackLayout>
 
@@ -58,7 +108,7 @@
 
 
 
-        </ListView>
+        </ListView>-->
 
     </StackLayout>
 

@@ -1,6 +1,7 @@
 ﻿using ListaXamarin.Models;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Text;
 using Xamarin.Forms.MultiSelectListView;
 
@@ -8,11 +9,13 @@ namespace ListaXamarin.ViewModels
 {
     public class ProdutosViewModel : BaseViewModel
     {
-        public MultiSelectObservableCollection<Produto> Produtos { get; set; }
+        //public MultiSelectObservableCollection<Produto> Produtos { get; set; }
+        public ObservableCollection<Produto> Produtos { get; set; }
+
 
         public ProdutosViewModel()
         {
-            Produtos = new MultiSelectObservableCollection<Produto>
+            Produtos = new ObservableCollection<Produto>
             {
                 new Produto{IdProduto = 1001, NomeProduto = "Arroz", QuantidadeDeItens = 0 },
                 new Produto{IdProduto = 1002, NomeProduto = "Feijão", QuantidadeDeItens = 0 },

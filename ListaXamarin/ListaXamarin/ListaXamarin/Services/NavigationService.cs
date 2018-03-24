@@ -1,4 +1,5 @@
 ﻿using ListaXamarin.IServices;
+using ListaXamarin.Views;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -14,10 +15,10 @@ namespace ListaXamarin.Services
             await App.Current.MainPage.Navigation.PushAsync(new Views.LoginView());
         }
 
-        //public async System.Threading.Tasks.Task NavigateToRegister()
-        //{
-        //    await App.Current.MainPage.Navigation.PushAsync(new Views.RegisterView());
-        //}
+        public async System.Threading.Tasks.Task NavigateToItensView()
+        {
+            await App.Current.MainPage.Navigation.PushAsync(new ItensView());
+        }
 
         public async System.Threading.Tasks.Task NavigateToMain()
         {
